@@ -8,6 +8,7 @@ class alumnos(Base):
     Fk_carrera = Column(Integer, ForeignKey('tbl_carreras.Id_carrera'))
     relacion_carrera = relationship("carreras", back_populates="relacion_alumno")
     materias = relationship("MateriasAlumno", back_populates="alumno")
+    R_alumno_calificacion = relationship("calificaciones", back_populates="R_calificacion_alumno")
     nombre = Column(String(20))
     apellido = Column(String(200))
     edad = Column(String(20))

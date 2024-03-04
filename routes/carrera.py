@@ -39,7 +39,7 @@ async def update_carrera(id:int,entrada:S_carrera.CarreraUpdate,db:Session=Depen
         db.refresh(carrera)
         return carrera
     else:
-        return {"mensaje": "Alumno no encontrado"}
+        return {"mensaje": "Carrera no encontrada"}
 
 @carrera.delete("/carreras/{id}",response_model=None)
 async def delete_carrera(id:int,db:Session=Depends(get_db)):
